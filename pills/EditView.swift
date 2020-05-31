@@ -9,13 +9,30 @@
 import SwiftUI
 
 struct EditView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+    let pill: Pill
+    let cloudDb: DB
+    var newDate: State<Date>
+    
+    init(pill: Pill, cloudDb: DB) {
+        self.pill = pill
+        self.cloudDb = cloudDb
+        self.newDate = State(initialValue: pill.takenAt)
     }
+    
+    var body: some View {
+        DatePicker(selection: newDate.projectedValue, label: { Text("Edit") }).labelsHidden().onDisappear {
+            if self.pill.takenAt != self.newDate.wrappedValue {
+                self.cloudDb.delete(pill: self.pill)
+                self.cloudDb.add(date: self.newDate.wrappedValue)
+            }
+        }
+    }
+    
+    
 }
 
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView()
+        EditView(pill: Pill(), cloudDb: DummyDb())
     }
 }

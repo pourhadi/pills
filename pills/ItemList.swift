@@ -9,13 +9,33 @@
 import SwiftUI
 
 struct ItemList: View {
+    
+    @ObservedObject var cloudDb: DB
+    
+    @Binding var selection: String?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        return List {
+            ForEach(self.cloudDb.all) { pill in
+                ZStack {
+                    ItemView(selection: self.$selection, pill: pill).frame(height: 50)
+                    
+                    NavigationLink(destination: EditView(pill: pill, cloudDb: self.cloudDb)) {
+                        EmptyView() }.isDetailLink(true)
+                }
+            }.onDelete { (indexSet) in
+                self.cloudDb.delete(indexes: indexSet)
+            }
+        }
+        
     }
 }
 
 struct ItemList_Previews: PreviewProvider {
+    @State static var selection: String? = nil
     static var previews: some View {
-        ItemList()
+        NavigationView {
+            ItemList(cloudDb: DummyDb(), selection: $selection)
+        }
     }
 }
