@@ -14,4 +14,11 @@ class HostingController: WKHostingController<ContentView> {
     override var body: ContentView {
         return ContentView()
     }
+    
+    override func didAppear() {
+        super.didAppear()
+        
+        CloudDb.instance.refresh()
+
+    }
 }
