@@ -10,14 +10,13 @@ import UIKit
 import NotificationCenter
 import SwiftDate
 import Combine
-import SwiftUI
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var lastTakenLabel: UILabel!
     @IBOutlet weak var takePillButton: UIButton!
     @IBOutlet weak var relativeLabel: UILabel!
     
-    @ObservedObject private var cloudDb = CloudDb.instance
+    private var cloudDb = CloudDb.instance
     
     private var all = [Pill]()
     
@@ -34,8 +33,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         cancellable = cloudDb.objectWillChange.receive(on: DispatchQueue.main).sink { () in
             self.update()
         }
-    }
         
+        self.takePillButton.isEnabled = false
+    }
+    var updated = false
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
         
@@ -47,18 +48,26 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         update()
         completionHandler(NCUpdateResult.newData)
+        
+        self.takePillButton.isEnabled = true
+        self.updated = true
     }
     
     func update() {
         if let last = cloudDb.all.first {
             lastTakenLabel.text = DateFormatter.localizedString(from: last.takenAt, dateStyle: .none, timeStyle: .short)
-            relativeLabel.text = last.takenAt.toString(.relative(style: nil))
+//            let style = RelativeFormatter.Style(
+            relativeLabel.text = last.takenAt.toString(.relative(style: RelativeFormatter.twitterStyle()))
         } else {
             lastTakenLabel.text = ""
         }
     }
     
     @IBAction func takePill() {
+        
+        if !self.updated {
+            return
+        }
         cloudDb.pillTaken()
 //        update()
     }

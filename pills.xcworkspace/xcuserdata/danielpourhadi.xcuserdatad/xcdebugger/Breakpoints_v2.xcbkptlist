@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B5A27522-CFAC-4CBD-B7B3-DA849EB83372"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58639B66-E68A-42AD-934E-3704E6C0CDD9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pillsForWatch Extension/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "58639B66-E68A-42AD-934E-3704E6C0CDD9 - 51bcf30ec0c17b39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in pillsForWatch_Extension.ContentView.body.getter : some"
+                  moduleName = "pillsForWatch Extension"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielpourhadi/Projects/pills_old/pills/pillsForWatch%20Extension/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "381">
+               </Location>
+               <Location
+                  uuid = "58639B66-E68A-42AD-934E-3704E6C0CDD9 - dc12c1120052dd81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Swift.Optional&lt;SwiftUI.TupleView&lt;(SwiftUI.Text, SwiftUI.Text)&gt;&gt;, SwiftUI.Text, SwiftUI.Button&lt;SwiftUI.Text&gt;)&gt; in (extension in pillsForWatch_Extension_PreviewReplacement_ContentView_6):pillsForWatch_Extension.ContentView.(__preview__body in _55811BF1CDC515A5A568093272D4142A).getter : some"
+                  moduleName = "ContentView.6.preview-thunk.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/danielpourhadi/Projects/pills_old/pills/pillsForWatch%20Extension/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "381">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -18,7 +18,10 @@ class DB: ObservableObject {
     
     init(all: [Pill]) {
         self.all = all
+        
     }
+    
+    func refresh() {}
     
     func delete(indexes: IndexSet) {
         
@@ -59,7 +62,8 @@ class CloudDb: DB {
     }
     
     private var getAllCancellable: AnyCancellable?
-    func refresh() {
+    override func refresh() {
+        print("refresh")
         getAllCancellable?.cancel()
         getAllCancellable = getAll().receive(on: DispatchQueue.main).sink(receiveCompletion: { (completion) in
             switch completion {

@@ -31,6 +31,23 @@
 		37D086CF234D885F00E39269 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 37D086CE234D885F00E39269 /* GRDB */; };
 		6D5F64D3F7D78917A169C05F /* Pods_pills.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F3908F47AD7DC26678B91B1 /* Pods_pills.framework */; };
 		BC2D936694D8AB83F5F8A080 /* Pods_widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2DFD5D32CF3B5B1DDC135A5 /* Pods_widget.framework */; };
+		DC840B11248334B900DA342F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC840B0F248334B900DA342F /* Interface.storyboard */; };
+		DC840B13248334BA00DA342F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC840B12248334BA00DA342F /* Assets.xcassets */; };
+		DC840B1A248334BA00DA342F /* pillsForWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DC840B19248334BA00DA342F /* pillsForWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DC840B1F248334BA00DA342F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC840B1E248334BA00DA342F /* ContentView.swift */; };
+		DC840B21248334BA00DA342F /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC840B20248334BA00DA342F /* HostingController.swift */; };
+		DC840B23248334BA00DA342F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC840B22248334BA00DA342F /* ExtensionDelegate.swift */; };
+		DC840B25248334BA00DA342F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC840B24248334BA00DA342F /* NotificationController.swift */; };
+		DC840B27248334BA00DA342F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC840B26248334BA00DA342F /* NotificationView.swift */; };
+		DC840B29248334BA00DA342F /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC840B28248334BA00DA342F /* ComplicationController.swift */; };
+		DC840B2B248334BA00DA342F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC840B2A248334BA00DA342F /* Assets.xcassets */; };
+		DC840B2E248334BA00DA342F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC840B2D248334BA00DA342F /* Preview Assets.xcassets */; };
+		DC840B33248334BA00DA342F /* pillsForWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = DC840B0D248334B900DA342F /* pillsForWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DC840B3D2483369600DA342F /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = DC840B3C2483369600DA342F /* GRDB */; };
+		DC840B3E248336C600DA342F /* Db.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D086B2234D6CFD00E39269 /* Db.swift */; };
+		DC840B3F2483372800DA342F /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3703D60E2378FEA100C40422 /* Notifications.swift */; };
+		DC840B412483379800DA342F /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = DC840B402483379800DA342F /* SwiftDate */; };
+		DC840B44248339BE00DA342F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC840B43248339BE00DA342F /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +57,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 37D086BA234D87DD00E39269;
 			remoteInfo = widget;
+		};
+		DC840B1B248334BA00DA342F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37D08689234D5E4800E39269 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC840B18248334BA00DA342F;
+			remoteInfo = "pillsForWatch Extension";
+		};
+		DC840B31248334BA00DA342F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37D08689234D5E4800E39269 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC840B0C248334B900DA342F;
+			remoteInfo = pillsForWatch;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,6 +84,28 @@
 				37D086C8234D87DD00E39269 /* pills widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC840B37248334BA00DA342F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DC840B1A248334BA00DA342F /* pillsForWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC840B3B248334BA00DA342F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				DC840B33248334BA00DA342F /* pillsForWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -85,6 +138,23 @@
 		A04ABF789ABC27BB4C810C91 /* Pods-widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widget.debug.xcconfig"; path = "Target Support Files/Pods-widget/Pods-widget.debug.xcconfig"; sourceTree = "<group>"; };
 		CE48B229BB3B8BEAD0882255 /* Pods-widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widget.release.xcconfig"; path = "Target Support Files/Pods-widget/Pods-widget.release.xcconfig"; sourceTree = "<group>"; };
 		D2DFD5D32CF3B5B1DDC135A5 /* Pods_widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC840B0D248334B900DA342F /* pillsForWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pillsForWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC840B10248334B900DA342F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		DC840B12248334BA00DA342F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC840B14248334BA00DA342F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC840B19248334BA00DA342F /* pillsForWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "pillsForWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC840B1E248334BA00DA342F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC840B20248334BA00DA342F /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		DC840B22248334BA00DA342F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		DC840B24248334BA00DA342F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		DC840B26248334BA00DA342F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		DC840B28248334BA00DA342F /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		DC840B2A248334BA00DA342F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC840B2D248334BA00DA342F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC840B2F248334BA00DA342F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC840B30248334BA00DA342F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		DC840B42248339BB00DA342F /* pillsForWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "pillsForWatch Extension.entitlements"; sourceTree = "<group>"; };
+		DC840B43248339BE00DA342F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS6.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +179,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC840B16248334BA00DA342F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC840B44248339BE00DA342F /* CloudKit.framework in Frameworks */,
+				DC840B412483379800DA342F /* SwiftDate in Frameworks */,
+				DC840B3D2483369600DA342F /* GRDB in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF68F9C08E81111C6824C14D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,6 +204,8 @@
 			children = (
 				37D08693234D5E4800E39269 /* pills */,
 				37D086BF234D87DD00E39269 /* widget */,
+				DC840B0E248334B900DA342F /* pillsForWatch */,
+				DC840B1D248334BA00DA342F /* pillsForWatch Extension */,
 				37D086BC234D87DD00E39269 /* Frameworks */,
 				37D08692234D5E4800E39269 /* Products */,
 				3AA5C6B1933E395993D43318 /* Pods */,
@@ -128,6 +217,8 @@
 			children = (
 				37D08691234D5E4800E39269 /* pills.app */,
 				37D086BB234D87DD00E39269 /* pills widget.appex */,
+				DC840B0D248334B900DA342F /* pillsForWatch.app */,
+				DC840B19248334BA00DA342F /* pillsForWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +254,7 @@
 		37D086BC234D87DD00E39269 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC840B43248339BE00DA342F /* CloudKit.framework */,
 				378FCCF3236BEB1A00F311FA /* CloudKit.framework */,
 				37D086BD234D87DD00E39269 /* NotificationCenter.framework */,
 				5F3908F47AD7DC26678B91B1 /* Pods_pills.framework */,
@@ -193,6 +285,42 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DC840B0E248334B900DA342F /* pillsForWatch */ = {
+			isa = PBXGroup;
+			children = (
+				DC840B0F248334B900DA342F /* Interface.storyboard */,
+				DC840B12248334BA00DA342F /* Assets.xcassets */,
+				DC840B14248334BA00DA342F /* Info.plist */,
+			);
+			path = pillsForWatch;
+			sourceTree = "<group>";
+		};
+		DC840B1D248334BA00DA342F /* pillsForWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DC840B42248339BB00DA342F /* pillsForWatch Extension.entitlements */,
+				DC840B1E248334BA00DA342F /* ContentView.swift */,
+				DC840B20248334BA00DA342F /* HostingController.swift */,
+				DC840B22248334BA00DA342F /* ExtensionDelegate.swift */,
+				DC840B24248334BA00DA342F /* NotificationController.swift */,
+				DC840B26248334BA00DA342F /* NotificationView.swift */,
+				DC840B28248334BA00DA342F /* ComplicationController.swift */,
+				DC840B2A248334BA00DA342F /* Assets.xcassets */,
+				DC840B2F248334BA00DA342F /* Info.plist */,
+				DC840B30248334BA00DA342F /* PushNotificationPayload.apns */,
+				DC840B2C248334BA00DA342F /* Preview Content */,
+			);
+			path = "pillsForWatch Extension";
+			sourceTree = "<group>";
+		};
+		DC840B2C248334BA00DA342F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DC840B2D248334BA00DA342F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -206,11 +334,13 @@
 				37D0868F234D5E4800E39269 /* Resources */,
 				37D086CC234D87DD00E39269 /* Embed App Extensions */,
 				84A930CD51AC717892B93FBF /* [CP] Embed Pods Frameworks */,
+				DC840B3B248334BA00DA342F /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				37D086C7234D87DD00E39269 /* PBXTargetDependency */,
+				DC840B32248334BA00DA342F /* PBXTargetDependency */,
 			);
 			name = pills;
 			packageProductDependencies = (
@@ -241,13 +371,52 @@
 			productReference = 37D086BB234D87DD00E39269 /* pills widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		DC840B0C248334B900DA342F /* pillsForWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC840B38248334BA00DA342F /* Build configuration list for PBXNativeTarget "pillsForWatch" */;
+			buildPhases = (
+				DC840B0B248334B900DA342F /* Resources */,
+				DC840B37248334BA00DA342F /* Embed App Extensions */,
+				FF68F9C08E81111C6824C14D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC840B1C248334BA00DA342F /* PBXTargetDependency */,
+			);
+			name = pillsForWatch;
+			productName = pillsForWatch;
+			productReference = DC840B0D248334B900DA342F /* pillsForWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		DC840B18248334BA00DA342F /* pillsForWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC840B34248334BA00DA342F /* Build configuration list for PBXNativeTarget "pillsForWatch Extension" */;
+			buildPhases = (
+				DC840B15248334BA00DA342F /* Sources */,
+				DC840B16248334BA00DA342F /* Frameworks */,
+				DC840B17248334BA00DA342F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "pillsForWatch Extension";
+			packageProductDependencies = (
+				DC840B3C2483369600DA342F /* GRDB */,
+				DC840B402483379800DA342F /* SwiftDate */,
+			);
+			productName = "pillsForWatch Extension";
+			productReference = DC840B19248334BA00DA342F /* pillsForWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		37D08689234D5E4800E39269 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = dan;
 				TargetAttributes = {
@@ -256,6 +425,12 @@
 					};
 					37D086BA234D87DD00E39269 = {
 						CreatedOnToolsVersion = 11.1;
+					};
+					DC840B0C248334B900DA342F = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					DC840B18248334BA00DA342F = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -278,6 +453,8 @@
 			targets = (
 				37D08690234D5E4800E39269 /* pills */,
 				37D086BA234D87DD00E39269 /* widget */,
+				DC840B0C248334B900DA342F /* pillsForWatch */,
+				DC840B18248334BA00DA342F /* pillsForWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -298,6 +475,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D086C4234D87DD00E39269 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC840B0B248334B900DA342F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC840B13248334BA00DA342F /* Assets.xcassets in Resources */,
+				DC840B11248334B900DA342F /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC840B17248334BA00DA342F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC840B2E248334BA00DA342F /* Preview Assets.xcassets in Resources */,
+				DC840B2B248334BA00DA342F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +589,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC840B15248334BA00DA342F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC840B3F2483372800DA342F /* Notifications.swift in Sources */,
+				DC840B3E248336C600DA342F /* Db.swift in Sources */,
+				DC840B21248334BA00DA342F /* HostingController.swift in Sources */,
+				DC840B1F248334BA00DA342F /* ContentView.swift in Sources */,
+				DC840B25248334BA00DA342F /* NotificationController.swift in Sources */,
+				DC840B23248334BA00DA342F /* ExtensionDelegate.swift in Sources */,
+				DC840B27248334BA00DA342F /* NotificationView.swift in Sources */,
+				DC840B29248334BA00DA342F /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -401,6 +611,16 @@
 			isa = PBXTargetDependency;
 			target = 37D086BA234D87DD00E39269 /* widget */;
 			targetProxy = 37D086C6234D87DD00E39269 /* PBXContainerItemProxy */;
+		};
+		DC840B1C248334BA00DA342F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC840B18248334BA00DA342F /* pillsForWatch Extension */;
+			targetProxy = DC840B1B248334BA00DA342F /* PBXContainerItemProxy */;
+		};
+		DC840B32248334BA00DA342F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC840B0C248334B900DA342F /* pillsForWatch */;
+			targetProxy = DC840B31248334BA00DA342F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -419,6 +639,14 @@
 				37D086C3234D87DD00E39269 /* Base */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		DC840B0F248334B900DA342F /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC840B10248334B900DA342F /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -626,6 +854,94 @@
 			};
 			name = Release;
 		};
+		DC840B35248334BA00DA342F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "pillsForWatch Extension/pillsForWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"pillsForWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 84476NUWZH;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "pillsForWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pourhadi.pillstaken.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		DC840B36248334BA00DA342F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "pillsForWatch Extension/pillsForWatch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"pillsForWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 84476NUWZH;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "pillsForWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pourhadi.pillstaken.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		DC840B39248334BA00DA342F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 84476NUWZH;
+				IBSC_MODULE = pillsForWatch_Extension;
+				INFOPLIST_FILE = pillsForWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pourhadi.pillstaken.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		DC840B3A248334BA00DA342F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 84476NUWZH;
+				IBSC_MODULE = pillsForWatch_Extension;
+				INFOPLIST_FILE = pillsForWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pourhadi.pillstaken.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -652,6 +968,24 @@
 			buildConfigurations = (
 				37D086CA234D87DD00E39269 /* Debug */,
 				37D086CB234D87DD00E39269 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC840B34248334BA00DA342F /* Build configuration list for PBXNativeTarget "pillsForWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC840B35248334BA00DA342F /* Debug */,
+				DC840B36248334BA00DA342F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC840B38248334BA00DA342F /* Build configuration list for PBXNativeTarget "pillsForWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC840B39248334BA00DA342F /* Debug */,
+				DC840B3A248334BA00DA342F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -687,6 +1021,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 37D086AF234D6CE000E39269 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
 			productName = GRDB;
+		};
+		DC840B3C2483369600DA342F /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37D086AF234D6CE000E39269 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+		DC840B402483379800DA342F /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37D086B4234D73B200E39269 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
