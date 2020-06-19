@@ -7,7 +7,8 @@
 //
 
 import ClockKit
-
+import Combine
+import SwiftDate
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
@@ -17,12 +18,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler([.forward, .backward])
     }
     
-    func getTimelineStartDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        handler(nil)
-    }
+    
     
     func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-        handler(nil)
+        handler(Date())
     }
     
     func getPrivacyBehavior(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationPrivacyBehavior) -> Void) {
@@ -30,20 +29,32 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     // MARK: - Timeline Population
-    
+    var c: AnyCancellable?
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        handler(nil)
-    }
-    
-    func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-        // Call the handler with the timeline entries prior to the given date
-        handler(nil)
-    }
-    
-    func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-        // Call the handler with the timeline entries after to the given date
-        handler(nil)
+        
+        c?.cancel()
+        
+        c = CloudDb.instance
+            .getAll()
+        .replaceError(with: [])
+            .receive(on: DispatchQueue.main).sink { val in
+                guard val.count > 0 else { return }
+                
+                let pill = val.first!
+                let complication = CLKComplicationTemplateGraphicCornerGaugeText()
+
+                let timelineProvider = CLKTimeIntervalGaugeProvider(style: .fill, gaugeColors: [UIColor.green, UIColor.yellow, UIColor.red], gaugeColorLocations: [0, 0.3, 0.6], start: pill.takenAt, end: pill.takenAt.dateByAdding(3, .hour).date)
+                let outerText = CLKSimpleTextProvider(text: pill.takenAt.toString(.time(.medium)))
+
+                complication.gaugeProvider = timelineProvider
+                complication.outerTextProvider = outerText
+                
+                let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate:complication)
+                
+                handler(entry)
+        }
+
     }
     
     // MARK: - Placeholder Templates
