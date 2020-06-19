@@ -29,7 +29,8 @@ class DB: ObservableObject {
     
     func delete(pill: Pill) {}
     
-    func add(date: Date) {}
+    @discardableResult
+    func add(date: Date) -> Pill { return Pill() }
 }
 
 class DummyDb: DB {
@@ -76,7 +77,8 @@ class CloudDb: DB {
         }
     }
     
-    override func add(date: Date) {
+    @discardableResult
+    override func add(date: Date) -> Pill {
         let newId = CKRecord.ID(recordName: "\(date.timeIntervalSince1970)")
         let record = CKRecord(recordType: "Pill", recordID: newId)
         record["takenAt"] = date
@@ -95,11 +97,14 @@ class CloudDb: DB {
         }
         
         Notifications.reschedule()
+        
+        return pill
     }
     
-    func pillTaken() {
+    @discardableResult
+    func pillTaken() -> Pill {
         let date = Date()
-        add(date: date)
+        return add(date: date)
     }
     
     override func delete(indexes: IndexSet) {

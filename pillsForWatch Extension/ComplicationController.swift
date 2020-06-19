@@ -44,8 +44,18 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 let pill = val.first!
                 let complication = CLKComplicationTemplateGraphicCornerGaugeText()
 
-                let timelineProvider = CLKTimeIntervalGaugeProvider(style: .fill, gaugeColors: [UIColor.green, UIColor.yellow, UIColor.red], gaugeColorLocations: [0, 0.3, 0.6], start: pill.takenAt, end: pill.takenAt.dateByAdding(3, .hour).date)
-                let outerText = CLKSimpleTextProvider(text: pill.takenAt.toString(.time(.medium)))
+                let threehours = pill.takenAt.addingTimeInterval(60 * 60 * 3)
+                
+                let fraction = pill.takenAt.timeIntervalSinceNow / (60 * 60 * 3)
+                
+//                let timelineProvider = CLKTimeIntervalGaugeProvider(style: .fill, gaugeColors: [UIColor.green, UIColor.yellow, UIColor.red], gaugeColorLocations:nil, start: pill.takenAt, end: pill.takenAt.addingTimeInterval(60 * 60 * 3))
+               
+                let color = fraction < 0.3 ? UIColor.green : fraction < 0.6 ? UIColor.orange : UIColor.red
+                
+                let timelineProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: color, fillFraction: Float(fraction))
+//                let outerText = CLKSimpleTextProvider(text: pill.takenAt.addingTimeInterval(60 * 60 * 3).toString(.time(.short)))
+
+                let outerText = CLKSimpleTextProvider(text: pill.takenAt.toString(.time(.short)))
 
                 complication.gaugeProvider = timelineProvider
                 complication.outerTextProvider = outerText
